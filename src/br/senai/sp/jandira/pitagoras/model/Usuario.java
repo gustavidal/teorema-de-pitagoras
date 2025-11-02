@@ -9,10 +9,6 @@ public class Usuario {
     double cateto2;
     double hipotenusa;
 
-    double cateto1AoQuadrado = cateto1 * cateto1;
-    double cateto2AoQuadrado = cateto2 * cateto2;
-    double hipotenusaAoQuadrado = hipotenusa * hipotenusa;
-
     Scanner leitor = new Scanner(System.in);
 
     public void obterEscolha(){
@@ -37,20 +33,45 @@ public class Usuario {
     }
 
     public void descobrirCateto(){
+        System.out.print("");
         System.out.print("Informe o valor do cateto: ");
-        cateto2 = leitor.nextDouble();
+        cateto1 = leitor.nextDouble();
         System.out.print("Informe o valor da hipotenusa: ");
         hipotenusa = leitor.nextDouble();
 
-        cateto1 = Math.sqrt(hipotenusaAoQuadrado - cateto2AoQuadrado);
+        if (hipotenusa <= cateto1){
+            System.out.println("");
+            System.out.println("ERRO!**");
+            System.out.println("A hipotenusa deve ser maior que o cateto!");
+            return;
+        }
+
+        cateto2 = Math.sqrt((hipotenusa * hipotenusa) - (cateto1 * cateto1));
+        exibirResultados();
     }
 
     public void descobrirHipotenusa(){
+        System.out.print("");
         System.out.print("Informe o valor do primeiro cateto: ");
         cateto1 = leitor.nextDouble();
         System.out.print("Informe o valor do segundo cateto: ");
         cateto2 = leitor.nextDouble();
 
-        hipotenusa = Math.sqrt(cateto1AoQuadrado + cateto2AoQuadrado);
+        hipotenusa = Math.sqrt((cateto1 * cateto1) + (cateto2 * cateto2));
+        exibirResultados();
+    }
+
+    public void exibirResultados(){
+        String cateto1Dec = String.format("%.2f", cateto1);
+        String cateto2Dec = String.format("%.2f", cateto2);
+        String hipotenusaDec = String.format("%.2f", hipotenusa);
+
+        System.out.println("");
+        System.out.println("*******************************");
+        System.out.println("Aqui estão os valores:");
+        System.out.println("Hipotenusa (a): " + hipotenusaDec);
+        System.out.println("Cateto (b): " + cateto1Dec);
+        System.out.println("Cateto (c): " + cateto2Dec);
+        System.out.println("*******************************");
     }
 }
