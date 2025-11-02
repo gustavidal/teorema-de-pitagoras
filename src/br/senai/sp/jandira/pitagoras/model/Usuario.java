@@ -37,10 +37,20 @@ public class Usuario {
     }
 
     public void descobrirCateto(){
+        System.out.print("Informe o valor do cateto: ");
+        cateto2 = leitor.nextDouble();
+        System.out.print("Informe o valor da hipotenusa: ");
+        hipotenusa = leitor.nextDouble();
+
         cateto1 = Math.sqrt(hipotenusaAoQuadrado - cateto2AoQuadrado);
     }
 
     public void descobrirHipotenusa(){
+        System.out.print("Informe o valor do primeiro cateto: ");
+        cateto1 = leitor.nextDouble();
+        System.out.print("Informe o valor do segundo cateto: ");
+        cateto2 = leitor.nextDouble();
+
         hipotenusa = Math.sqrt(cateto1AoQuadrado + cateto2AoQuadrado);
     }
 }
