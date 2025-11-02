@@ -5,9 +5,13 @@ import java.util.Scanner;
 public class Usuario {
 
     int numeroEscolhido;
-    double valorCateto1;
-    double valorCateto2;
-    double valorHipotenusa;
+    double cateto1;
+    double cateto2;
+    double hipotenusa;
+
+    double cateto1AoQuadrado = cateto1 * cateto1;
+    double cateto2AoQuadrado = cateto2 * cateto2;
+    double hipotenusaAoQuadrado = hipotenusa * hipotenusa;
 
     Scanner leitor = new Scanner(System.in);
 
@@ -33,10 +37,10 @@ public class Usuario {
     }
 
     public void descobrirCateto(){
-
+        cateto1 = Math.sqrt(hipotenusaAoQuadrado - cateto2AoQuadrado);
     }
 
     public void descobrirHipotenusa(){
-
+        hipotenusa = Math.sqrt(cateto1AoQuadrado + cateto2AoQuadrado);
     }
 }
