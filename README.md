@@ -13,7 +13,7 @@ No meu repositório do **GitHub**, você pode acompanhar todos os meus commits e
 
 O programa aplica o Teorema de Pitágoras, que afirma que:
 
-a² = b² + c²
+> a² = b² + c²
 
 onde:
 - a é a hipotenusa,
